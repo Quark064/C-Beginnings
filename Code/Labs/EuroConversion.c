@@ -19,21 +19,13 @@ int main(int argc, char const *argv[]) {
     defaultBill = "Euro";
 
     for (i = 0; i < 6; i++) {
-      if (i < 4) {
-        billCoin = "bills";
-      } else {
-        billCoin = "coins";
-      }
+      billCoin = (i < 4) ? "bills" : "coins";
       printf("Please enter the number of %s %d %s: ", defaultBill, euroArr[i],
              billCoin);
       scanf("%d", &amountEuroValArr[i]);
     }
     for (i = 0; i < 6; i++) {
-      if (i < 5) {
-        billCoin = "cents";
-      } else {
-        billCoin = "cent";
-      }
+      billCoin = (i < 5) ? "cents" : "cent";
       printf("Please enter the number of %s %d %s coins: ", defaultBill,
              euroArr[i], billCoin);
       scanf("%d", &amountEuroValArr[(i + 6)]);
@@ -86,26 +78,14 @@ int main(int argc, char const *argv[]) {
   }
 
   for (i = 0; i < 12; i++) {
-    if (euroValArr[i] == 1) {
-      euroBillsCheck[i] = "";
-    } else {
-      euroBillsCheck[i] = "s";
-    }
+    euroBillsCheck[i] = (euroValArr[i] == 1) ? "" : "s";
   }
 
   for (i = 0; i < 8; i++) {
-    if (dollValArr[i] == 1) {
-      dollBillsCheck[i] = "";
-    } else {
-      dollBillsCheck[i] = "s";
-    }
+    dollBillsCheck[i] = (dollValArr[i] == 1) ? "" : "s";
   }
 
-  if (dollValArr[7] == 1) {
-    dollBillsCheck[7] = "y";
-  } else {
-    dollBillsCheck[7] = "ies";
-  }
+  dollBillsCheck[7] = (dollValArr[7] == 1) ? "y" : "ies";
 
   if (userIn == 69) {
     printf(
@@ -143,14 +123,13 @@ int main(int argc, char const *argv[]) {
            "50(Euro)cents coin%s,\n%d 20(Euro)cents coin%s, %d 10(Euro)cents "
            "coin%s, %d 5(Euro)cents coin%s, %d 2(Euro)cents coin%s and %d "
            "1(Euro)cent coin%s.\n",
-           euroValArr[0], euroBillsCheck[0], euroValArr[1],
-           euroBillsCheck[1], euroValArr[2], euroBillsCheck[2],
-           euroValArr[3], euroBillsCheck[3], euroValArr[4],
-           euroBillsCheck[4], euroValArr[5], euroBillsCheck[5],
-           euroValArr[6], euroBillsCheck[6], euroValArr[7],
-           euroBillsCheck[7], euroValArr[8], euroBillsCheck[8],
-           euroValArr[9], euroBillsCheck[9], euroValArr[10],
-           euroBillsCheck[10], euroValArr[11], euroBillsCheck[11]);
+           euroValArr[0], euroBillsCheck[0], euroValArr[1], euroBillsCheck[1],
+           euroValArr[2], euroBillsCheck[2], euroValArr[3], euroBillsCheck[3],
+           euroValArr[4], euroBillsCheck[4], euroValArr[5], euroBillsCheck[5],
+           euroValArr[6], euroBillsCheck[6], euroValArr[7], euroBillsCheck[7],
+           euroValArr[8], euroBillsCheck[8], euroValArr[9], euroBillsCheck[9],
+           euroValArr[10], euroBillsCheck[10], euroValArr[11],
+           euroBillsCheck[11]);
   }
   return 0;
 }
