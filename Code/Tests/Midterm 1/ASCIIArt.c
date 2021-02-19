@@ -24,21 +24,13 @@ int main(int argc, char **argv) {
       }
       printf("\n");
     }
-
-
     else {
       for (j = 0; j <= (userNum - 2); ++j) {
         printf(" ");
       }
       printf("***\n");
     }
-
-}
-
-
-
-
-
+  }
 
   return 0;
 }
