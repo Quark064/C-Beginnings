@@ -6,6 +6,9 @@ int power(int base, int pow) {
   if (pow == 0) {
     return 1;
   }
+  if (base == 0) {
+    return 0;
+  }
   for (i = 0; i < (pow-1); i++) {
     j *= base;
   }
