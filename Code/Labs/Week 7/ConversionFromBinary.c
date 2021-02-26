@@ -47,7 +47,7 @@ int main(int argc, char **argv) {
   if (is_binary) {
     /* Convert the string of 0s and 1s to an integer number n */
     for (i = 0; i < binLen; i++) {
-      n += (((str[i] == 48) ? 0 : 1) * power(2, ((binLen - i) - 1)));
+      n += (((str[i] == '0') ? 0 : 1) * power(2, ((binLen - i) - 1)));
     }
 
     printf("The binary number %s is %d in decimal.\n", str, n);
