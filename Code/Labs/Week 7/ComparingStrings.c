@@ -2,12 +2,12 @@
 #include <stdio.h>
 
 int main(int argc, char **argv) {
+  const char null = '\0';
   const int BUF_LEN = 128;
   char str1[BUF_LEN];
   char str2[BUF_LEN];
-  int i;
-  char c, null = '\0';
-  int comp;
+  int i, comp = 0;
+  char c;
 
   /* Get the user to enter two strings */
   printf("Please enter two strings, finishing each entry by pressing Enter.\n");
@@ -18,7 +18,7 @@ int main(int argc, char **argv) {
     }
     str1[i] = c;
   }
-  str1[i] = '\0';
+  str1[i] = null;
 
   for (i=0; i<BUF_LEN-1; i++) {
     scanf("%c", &c);
@@ -27,11 +27,10 @@ int main(int argc, char **argv) {
     }
     str2[i] = c;
   }
-  str2[i] = '\0';
+  str2[i] = null;
 
   /* Initial check of str1 vs str2 */
   i = 0;
-  comp = 0;
   while ((str1[i] != null) && (str2[i] != null)) {
     if (str1[i] < str2[i]) {
       comp = -1;

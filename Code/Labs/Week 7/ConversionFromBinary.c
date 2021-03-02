@@ -1,16 +1,22 @@
 /* William Anderson - 2/26/2021 - C Homework */
 #include <stdio.h>
 
+/* A simple power function that takes a base and a power (ints) and returns the (base^power) */
 int power(int base, int pow) {
   int i, j = base;
+
+  /* Check if we somehow got an extranious case and provide a correct answer */
   if (pow == 0) {
     return 1;
   }
   if (base == 0) {
     return 0;
   }
+
+  /* Main power loop, calculates 'base' to the power of 'pow' (both integers).
+     Assumes that we don't have an extranious case (base, pow >= 1). */
   for (i = 0; i < (pow-1); i++) {
-    j *= base;
+    j = j * base;
   }
   return j;
 }
@@ -45,9 +51,13 @@ int main(int argc, char **argv) {
 
   /* Proceed only of the string contains only 0s and 1s */
   if (is_binary) {
-    /* Convert the string of 0s and 1s to an integer number n */
+    /* Convert the string of 0s and 1s to an integer number n.
+       Skips if str[i] == 0, since 0 * pow is always 0, so we don't need to
+       run the inefficient power loop more than needed.*/
     for (i = 0; i < binLen; i++) {
-      n += (((str[i] == '0') ? 0 : 1) * power(2, ((binLen - i) - 1)));
+      if (str[i] == '1') {
+        n += power(2, (binLen - i - 1));
+      }
     }
 
     printf("The binary number %s is %d in decimal.\n", str, n);

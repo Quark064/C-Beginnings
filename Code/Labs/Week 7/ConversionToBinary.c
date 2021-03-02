@@ -26,15 +26,15 @@ int main(int argc, char **argv) {
 
     i = 0;
     while (k > 0) {
-      str[i] = ((k % 2) ? 49 : 48);
-      k /= 2;
+      str[i] = ((k % 2) ? '1' : '0');
+      k = k / 2;
       i += 1;
     }
     str[i] = '\0';
     l = i - 1;
   }
 
-/* Revserse the string */
+/* Reverse the string */
   for (i = 0; i < ((l / 2) + 1); i++) {
     tmp = str[i];
     str[i] = str[l-i];
