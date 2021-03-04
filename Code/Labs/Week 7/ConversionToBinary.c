@@ -24,11 +24,9 @@ int main(int argc, char **argv) {
 
     k = n;
 
-    i = 0;
-    while (k > 0) {
+  for (i = 0; k > 0; i++) {
       str[i] = ((k % 2) ? '1' : '0');
       k = k / 2;
-      i += 1;
     }
     str[i] = '\0';
     l = i - 1;
