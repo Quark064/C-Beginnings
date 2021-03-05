@@ -23,13 +23,12 @@ int main(int argc, char **argv) {
   } else {
 
     k = n;
-
-  for (i = 0; k > 0; i++) {
-      str[i] = ((k % 2) ? '1' : '0');
-      k = k / 2;
-    }
-    str[i] = '\0';
-    l = i - 1;
+    for (i = 0; k > 0; i++) {
+        str[i] = ((k % 2) ? '1' : '0');
+        k = k / 2;
+      }
+      str[i] = '\0';
+      l = i - 1;
   }
 
 /* Reverse the string */
