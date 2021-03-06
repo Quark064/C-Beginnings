@@ -58,7 +58,7 @@ int main(int argc, char **argv) {
     idx2 = num_str2_len;
     idx3 = 0;
 
-    while(idx1 >= 0 || idx2 >= 0) {
+    while (idx1 >= 0 || idx2 >= 0) {
       d1 = (idx1 >= 0) ? (num_str1[idx1] - '0') : 0;
       d2 = (idx2 >= 0) ? (num_str2[idx2] - '0') : 0;
       d3 = d1 + d2 + carry;
@@ -72,7 +72,7 @@ int main(int argc, char **argv) {
       idx3++;
     }
 
-    if (carry + '0' != '0'){
+    if (carry + '0' != '0') {
       num_str3[idx3++] = carry + '0';
   }
 
