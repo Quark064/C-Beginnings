@@ -157,7 +157,7 @@ double average(double array[], int n) {
   double count = 0.0;
 
   if (n <= 0) {
-    return 0;
+    return 0.0;
   }
 
   for (i = 0; i < n; i++) {
