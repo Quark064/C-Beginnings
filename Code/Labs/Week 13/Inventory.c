@@ -288,11 +288,6 @@ int delete_item_from_inventory(item_t *(*new_inventory[]), int *new_inventory_le
     free(old_inventory);
 
     return 1;
-
-
-
-
-  return 0;
 }
 
 /* A function to delete all items in the inventory array of length
