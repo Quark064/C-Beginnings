@@ -282,10 +282,12 @@ int delete_item_from_inventory(item_t *(*new_inventory[]), int *new_inventory_le
       error_no_memory_left();
     }
 
-    while(j < *new_inventory_length) {
+    while (j < *new_inventory_length) {
+
       if (j == item_index) {
         i++;
       }
+
       (*new_inventory)[j] = old_inventory[i];
       i++;
       j++;
