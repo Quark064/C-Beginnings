@@ -268,7 +268,8 @@ int delete_item_from_inventory(item_t *(*new_inventory[]), int *new_inventory_le
 			       item_t *old_inventory[], int old_inventory_length,
 			       int item_index) {
 
-    int i;
+    int i = 0;
+    int j = 0;
 
     if (item_index > old_inventory_length || item_index < 0) {
       return 0;
@@ -281,9 +282,15 @@ int delete_item_from_inventory(item_t *(*new_inventory[]), int *new_inventory_le
       error_no_memory_left();
     }
 
-    for (i=0; i<old_inventory_length-1; i++) {
-      (*new_inventory)[i] = old_inventory[i];
+    while(j < *new_inventory_length) {
+      if (j == item_index) {
+        i++;
+      }
+      (*new_inventory)[j] = old_inventory[i];
+      i++;
+      j++;
     }
+
 
     free(old_inventory);
 
