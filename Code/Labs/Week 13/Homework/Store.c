@@ -96,12 +96,12 @@ item_t *create_item(int id, char description[], double price, int
   newItemStructure = (item_t*) malloc(sizeof(item_t));
 
   /* This implimentation saves resources but leaves room for attack, as if
-     there is a NULL character before the true end of the description
+     there is a NUL character before the true end of the description
      strcpy will Overflow its buffer. I think we could fix this with strlcpy
      but I don't think we are really worrying about this yet. */
 
   for (descLength = 0; description[descLength] != '\0'; descLength++);
-  descString = (char*) calloc(descLength, sizeof(char));
+  descString = (char*) calloc(descLength+1, sizeof(char));
   strcpy(descString, description);
 
   if (newItemStructure != NULL) {
