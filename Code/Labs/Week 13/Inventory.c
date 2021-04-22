@@ -271,7 +271,7 @@ int delete_item_from_inventory(item_t *(*new_inventory[]), int *new_inventory_le
     int i = 0;
     int j = 0;
 
-    if (item_index > old_inventory_length || item_index < 0) {
+    if (item_index >= old_inventory_length || item_index < 0) {
       return 0;
     }
 
