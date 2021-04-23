@@ -786,7 +786,7 @@ void add_item_to_order(ordered_item_t *(*new_order[]), int *new_order_length,
 
   newItem = (ordered_item_t *) malloc(sizeof(ordered_item_t));
 
-  if (new_order == NULL) {
+  if (new_order == NULL || newItem == NULL) {
     error_no_memory_left();
     return;
   }
