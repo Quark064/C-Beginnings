@@ -100,6 +100,8 @@ item_t *create_item(int id, char description[], double price, int
      strcpy will Overflow its buffer. I think we could fix this with strlcpy
      but I don't think we are really worrying about this yet. */
 
+  /* I forgot we can just use strlen im so dumb LMAO */
+
   for (descLength = 0; description[descLength] != '\0'; descLength++);
   descString = (char*) calloc(descLength+1, sizeof(char));
   strcpy(descString, description);
