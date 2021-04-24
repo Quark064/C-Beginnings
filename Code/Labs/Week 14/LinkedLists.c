@@ -364,7 +364,13 @@ list_t *add_before_kth_index(char *str, list_t *list, int k) {
   list_t *newItem;
   list_t *current = list;
   list_t *prev = NULL;
+  int lengthList = length_list(list);
+  int len = k;
   int i;
+
+  if (len > lengthList) {
+    len = lengthList;
+  }
 
   newItem = (list_t*) malloc(sizeof(list_t));
   newItem->str = (char*) calloc(strlen(str)+1, sizeof(char));
@@ -380,12 +386,12 @@ list_t *add_before_kth_index(char *str, list_t *list, int k) {
     return newItem;
   }
 
-  if (k <= 0) {
+  if (len <= 0) {
     newItem->next = list;
     return newItem;
   }
 
-  for (i = 0; i < k; i++) {
+  for (i = 0; i < len; i++) {
     prev = current;
     current = current->next;
   }
